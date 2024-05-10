@@ -26,16 +26,17 @@ void loop() {
   Serial.println(potValue);
 
   // Adjust mapping to focus on the range 600-1023
-  int mappedPotValue = map(potValue, 260, 950, 0, 1023); // Adjust the mapping range
+  int motorSpeed = map(potValue, 220, 1024, 100, 200); // Adjust the mapping range
 
   // Apply a combination of linear and non-linear mapping for sensitivity adjustment
-  int motorSpeed = 0;
+  //int motorSpeed = 0;
 
-  if (mappedPotValue < 400) {
+  /* if (mappedPotValue < 400) {
     motorSpeed = map(mappedPotValue, 200, 400, 100, 175); // Linear mapping for low values
   } else {
     motorSpeed = map(mappedPotValue, 400, 1500, 175, 275); // Non-linear mapping for high values
   }
+*/
 
   // Set motor direction based on the potentiometer value
   if (potValue < 275) {
